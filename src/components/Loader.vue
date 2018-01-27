@@ -5,35 +5,35 @@
 </template>
 
 <script>
-  import { PulseLoader, ClipLoader } from 'vue-spinner/dist/vue-spinner.min.js'
+import { PulseLoader, ClipLoader } from 'vue-spinner/dist/vue-spinner.min.js'
 
-  export default {
-    props: {
-      loading: {
-        type: Boolean,
-        default: true
-      },
-      size: {
-        type: String,
-        default: '40px'
-      },
-      color: {
-        type: String,
-        default: '#05ea19'
-      }
+export default {
+  props: {
+    loading: {
+      type: Boolean,
+      default: true
     },
-    data () {
-      return {
-        loaderStyle: {
-          height: this.size
-        }
-      }
+    size: {
+      type: String,
+      default: '40px'
     },
-    components: {
-      PulseLoader,
-      ClipLoader
+    color: {
+      type: String,
+      default: '#05ea19'
     }
+  },
+  data () {
+    return {
+      loaderStyle: {
+        height: this.size
+      }
+    }
+  },
+  components: {
+    PulseLoader,
+    ClipLoader
   }
+}
 </script>
 
 <style scoped>

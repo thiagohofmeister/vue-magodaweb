@@ -1,5 +1,15 @@
 <template>
   <div>
-    teste2
+    Home
   </div>
 </template>
+
+<script>
+export default {
+  created: function () {
+    this.$on('updateHead', function () {
+      self.title = 'My async title'
+    })
+  }
+}
+</script>
