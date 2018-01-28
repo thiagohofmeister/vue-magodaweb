@@ -15,11 +15,13 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="menu col text-center">
-          <router-link class="menu-item" v-for="menuItem in menu" :to="{ name: menuItem.name }" :key="menuItem.name">
-            <div class="menu-item-label">{{ menuItem.label }}</div>
-          </router-link>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="menu col text-center">
+            <router-link class="menu-item" v-for="menuItem in menu" :to="{ name: menuItem.name }" :key="menuItem.name">
+              <div class="menu-item-label">{{ menuItem.label }}</div>
+            </router-link>
+          </div>
         </div>
       </div>
 
@@ -47,7 +49,7 @@ export default {
   async mounted () {
     setTimeout(() => {
       this.loading = false
-    }, 200)
+    }, 500)
   },
   components: {
     Loader,

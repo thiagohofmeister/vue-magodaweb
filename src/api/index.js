@@ -5,7 +5,7 @@ const instance = axios.create({
 })
 
 export default {
-  async getPostsList () {
-    return (await instance.get('/post?page=1&limit=1')).data
+  async getPostsList (options) {
+    return (await instance.get('/post?page=1&limit=5')).data
   }
 }

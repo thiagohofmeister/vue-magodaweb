@@ -20,3 +20,8 @@ export default {
   }
 }
 </script>
+
+<style lang="sass">
+  .page-content
+    margin-top: 15px
+</style>
