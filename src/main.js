@@ -4,8 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import store from './store'
 import router from './router'
+import Icon from 'vue-awesome/icons'
 
 Vue.config.productionTip = false
+
+Vue.component('icon', Icon)
 
 require('./styles/custom-bootstrap.scss')
 require('../node_modules/bootstrap/scss/bootstrap.scss')

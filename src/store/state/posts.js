@@ -19,7 +19,7 @@ export default {
     }
   },
   getters: {
-    getByProductId: state => productId => state.posts.find(product => product.productId === productId)
+    getByPostSlug: state => slug => state.posts.find(post => post.slug === slug)
   },
   mutations: {
     setFetchData (state, { posts, total, options }) {

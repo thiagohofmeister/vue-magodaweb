@@ -7,6 +7,7 @@ import Mago from '@/views/Mago'
 import Servico from '@/views/Servico'
 import Blog from '@/views/Blog'
 import Contato from '@/views/Contato'
+import Post from '@/views/Post'
 
 // errors
 import NotFound from '@/views/NotFound'
@@ -22,7 +23,8 @@ const routes = [
     new Route(Mago, 'mago', 'mago'),
     new Route(Servico, 'servicos', 'servicos'),
     new Route(Blog, 'blog', 'blog'),
-    new Route(Contato, 'contato', 'contato')
+    new Route(Contato, 'contato', 'contato'),
+    new Route(Post, ':category/:postSlug', 'post').useProps()
   ]),
   new Route(NotFound, '*')
 ]

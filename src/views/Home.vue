@@ -57,17 +57,3 @@ export default {
   }
 }
 </script>
-
-<style>
-  .row.make-columns {
-    -moz-column-width: 19em !important;
-    -webkit-column-width: 19em !important;
-    -moz-column-gap: 1em !important;
-    -webkit-column-gap:1em !important;
-  }
-  .row.make-columns > div {
-    display: inline-block !important;
-    padding:  .5rem !important;
-    width:  100% !important;
-  }
-</style>

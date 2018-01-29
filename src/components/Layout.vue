@@ -3,7 +3,7 @@
     <loader :loading="loading"/>
     <server-error v-if="hasError"/>
     <template v-if="!loading && !hasError">
-      <div class="header container-fluid">
+      <header class="header container-fluid">
         <div class="container">
           <div class="row">
             <div class="col">
@@ -13,7 +13,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </header>
 
       <div class="container-fluid">
         <div class="row">
@@ -26,6 +26,25 @@
       </div>
 
       <router-view/>
+
+      <footer class="footer container-fluid">
+        <div class="row">
+          <div class="col-md-3 v-center">
+            <p class="rights">© 2015 - 2018 O Mago da Web. Todos os direitos reservados.</p>
+          </div>
+          <div class="socials col-md-2 offset-7 v-center">
+            <a :href="facebookUrl" class="icon fb v-center" target="_blank">
+              <icon name="facebook-square" scale="3"/>
+            </a>
+            <a :href="twitterUrl" class="icon tt v-center" target="_blank">
+              <icon name="twitter-square" scale="3"/>
+            </a>
+            <a :href="googlePlusUrl" class="icon gp v-center" target="_blank">
+              <icon name="google-plus-square" scale="3"/>
+            </a>
+          </div>
+        </div>
+      </footer>
     </template>
   </div>
 </template>
@@ -33,6 +52,7 @@
 <script>
 import Loader from '@/components/Loader'
 import ServerError from '@/components/ServerError'
+import Icon from 'vue-awesome/components/Icon'
 
 export default {
 
@@ -44,7 +64,10 @@ export default {
       { name: 'servicos', label: 'Serviços' },
       { name: 'blog', label: 'Blog' },
       { name: 'contato', label: 'Contato' }
-    ]
+    ],
+    facebookUrl: '',
+    twitterUrl: '',
+    googlePlusUrl: ''
   }),
   async mounted () {
     setTimeout(() => {
@@ -53,14 +76,15 @@ export default {
   },
   components: {
     Loader,
-    ServerError
+    ServerError,
+    Icon
   }
 }
 </script>
 
 <style lang="sass">
   .header
-    padding: 15px 0
+    padding: 15px
     background: #b6b6b6
 
   .logo
@@ -86,7 +110,25 @@ export default {
     &:last-child
       padding-right: 0
 
-  .v-center
-      display: flex
-      align-items: center
+  .footer
+    background: #2f2e2e
+    padding: 15px
+
+    .rights
+      font-size: 11px
+      color: #fff
+      margin: 0
+
+    .socials
+      color: #fff
+
+      .icon
+        font-size: 20px
+        color: #fff
+
+        &:hover
+          color: #b7b7b7
+
+        &:not(:last-child)
+          margin-right: 10px
 </style>

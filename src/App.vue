@@ -24,4 +24,8 @@ export default {
 <style lang="sass">
   .page-content
     margin-top: 15px
+
+  .v-center
+    display: flex
+    align-items: center
 </style>

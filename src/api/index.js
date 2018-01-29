@@ -6,6 +6,9 @@ const instance = axios.create({
 
 export default {
   async getPostsList (options) {
-    return (await instance.get('/post?page=1&limit=5')).data
+    return (await instance.get('/post?page=1&limit=6')).data
+  },
+  async getPost (postSlug) {
+    return (await instance.get(`/post/${postSlug}`)).data.posts[0]
   }
 }
