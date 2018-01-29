@@ -55,7 +55,6 @@ import ServerError from '@/components/ServerError'
 import Icon from 'vue-awesome/components/Icon'
 
 export default {
-
   data: () => ({
     loading: true,
     hasError: false,

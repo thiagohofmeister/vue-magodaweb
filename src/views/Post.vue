@@ -53,7 +53,6 @@ export default {
     }
   },
   async mounted () {
-
     this.post = this.getByPostSlug(this.postSlug)
 
     if (!this.post) {

@@ -38,6 +38,9 @@ export default {
     ...mapActions('posts', [
       'fetch'
     ]),
+    ...mapActions('seo', [
+      'fetchSeoHome'
+    ]),
     async getPosts () {
       this.fetch({
         options: this.options

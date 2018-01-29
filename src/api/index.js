@@ -10,5 +10,8 @@ export default {
   },
   async getPost (postSlug) {
     return (await instance.get(`/post/${postSlug}`)).data.posts[0]
+  },
+  async getSeo (path) {
+    return (await instance.get(`/seo/${path}`)).data
   }
 }

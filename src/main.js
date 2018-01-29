@@ -8,7 +8,7 @@ import Icon from 'vue-awesome/icons'
 
 Vue.config.productionTip = false
 
-Vue.component('icon', Icon)
+Vue.component(Icon)
 
 require('./styles/custom-bootstrap.scss')
 require('../node_modules/bootstrap/scss/bootstrap.scss')

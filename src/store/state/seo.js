@@ -3,18 +3,18 @@ import Api from '@/api'
 export default {
   namespaced: true,
   state: {
-    total: 0,
-    posts: [],
-    fetching: false,
-    lastFetchOptions: null
+    seo: {
+      seoTitle: ''
+    },
+    fetching: false
   },
   actions: {
-    async fetch ({ state, commit, getters }, { options }) {
+    async fetch ({ state, commit, getters }, { path }) {
       commit('fetching')
-      const { total, posts } = await Api.getPostsList(options)
+      const seo = await Api.getSeo(path)
 
       commit('setFetchData', {
-        posts, total, options
+        seo
       })
     }
   },
@@ -22,10 +22,8 @@ export default {
     getByPostSlug: state => slug => state.posts.find(post => post.slug === slug)
   },
   mutations: {
-    setFetchData (state, { posts, total, options }) {
-      state.total = total
-      state.posts = posts
-      state.lastFetchOptions = {...options}
+    setFetchData (state, { seo }) {
+      state.seo = seo
       state.fetching = false
     },
     fetching (state) {
