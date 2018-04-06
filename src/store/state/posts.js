@@ -19,7 +19,8 @@ export default {
     }
   },
   getters: {
-    getByPostSlug: state => slug => state.posts.find(post => post.slug === slug)
+    getByPostSlug: state => slug => state.posts.find(post => post.slug === slug),
+    getByCategorySlug: state => slug => state.posts.find(post => post.category.slug === slug)
   },
   mutations: {
     setFetchData (state, { posts, total, options }) {

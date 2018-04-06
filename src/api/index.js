@@ -11,6 +11,9 @@ export default {
   async getPost (postSlug) {
     return (await instance.get(`/post/${postSlug}`)).data.posts[0]
   },
+  async getPosts (categorySlug) {
+    return (await instance.get(`/post/${categorySlug}`)).data.posts
+  },
   async getSeo (path) {
     return (await instance.get(`/seo/${path}`)).data
   }

@@ -34,13 +34,10 @@
           </div>
           <div class="socials col-md-2 offset-7 v-center">
             <a :href="facebookUrl" class="icon fb v-center" target="_blank">
-              <icon name="facebook-square" scale="3"/>
             </a>
             <a :href="twitterUrl" class="icon tt v-center" target="_blank">
-              <icon name="twitter-square" scale="3"/>
             </a>
             <a :href="googlePlusUrl" class="icon gp v-center" target="_blank">
-              <icon name="google-plus-square" scale="3"/>
             </a>
           </div>
         </div>
@@ -53,6 +50,27 @@
 import Loader from '@/components/Loader'
 import ServerError from '@/components/ServerError'
 import Icon from 'vue-awesome/components/Icon'
+import seo from '@/api/seo'
+
+const path = function () {
+  let url = window.location.href
+
+  let slug = ''
+  if (url.indexOf('#') !== -1) {
+    const [, first, second] = url.split('#')[1].split('/')
+
+    slug += first
+    if (second !== undefined) {
+      slug += '/' + second
+    }
+  }
+
+  if (slug === '') {
+    slug = '/'
+  }
+
+  return seo[slug]
+}
 
 export default {
   data: () => ({
@@ -77,6 +95,11 @@ export default {
     Loader,
     ServerError,
     Icon
+  },
+  head: {
+    title: {
+      inner: path().title
+    }
   }
 }
 </script>

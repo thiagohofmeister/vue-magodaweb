@@ -40,30 +40,26 @@ import { mapGetters } from 'vuex'
 export default {
   data: () => ({
     loading: true,
-    post: {}
+    posts: []
   }),
   props: {
-    category: {
-      type: String,
-      required: true
-    },
-    postSlug: {
+    categorySlug: {
       type: String,
       required: true
     }
   },
   async mounted () {
-    this.post = this.getByPostSlug(this.postSlug)
+    this.posts = this.getByCategorySlug(this.categorySlug)
 
-    if (!this.post) {
+    if (!this.posts) {
       try {
-        this.post = await Api.getPost(this.postSlug)
+        this.posts = await Api.getPosts(this.categorySlug)
       } catch (err) {
-        this.redirectToListPosts()
+        // this.redirectToListPosts()
       }
     }
 
-    console.log(this.post)
+    console.log(this.posts)
   },
   methods: {
     redirectToListPosts () {
@@ -72,7 +68,7 @@ export default {
   },
   computed: {
     ...mapGetters('posts', [
-      'getByPostSlug'
+      'getByCategorySlug'
     ])
   },
   components: {
