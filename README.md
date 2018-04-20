@@ -1,6 +1,6 @@
-# magodaweb
+# Mago da Web
 
-> Front-end do site do Mago da Web
+[![Build Status](https://travis-ci.org/thiagohofmeister/vue-magodaweb.svg?branch=master)](https://travis-ci.org/thiagohofmeister/vue-magodaweb)
 
 ## Build Setup
 
